@@ -1,0 +1,196 @@
+/* Tema inspirado nas fases clássicas do Mario. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    isolation: isolate;
+    min-height: 100vh;
+    margin: 0;
+    padding: 56px 20px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #392315;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 18% 18%, #fff 0 34px, transparent 35px),
+        radial-gradient(ellipse at 23% 17%, #fff 0 25px, transparent 26px),
+        radial-gradient(ellipse at 78% 27%, #fff 0 38px, transparent 39px),
+        radial-gradient(ellipse at 73% 25%, #fff 0 27px, transparent 28px),
+        linear-gradient(#54c9f2 0%, #a4e9fa 72%, #d7f8ff 100%);
+}
+
+/* Pequeno aventureiro original em pixel art, montado com quadrados CSS. */
+body::before {
+    position: fixed;
+    z-index: 1;
+    right: clamp(14px, 8vw, 110px);
+    bottom: 86px;
+    width: 8px;
+    height: 8px;
+    content: "";
+    pointer-events: none;
+    image-rendering: pixelated;
+    background: #6b351d;
+    box-shadow:
+        8px 0 #6b351d, 16px 0 #6b351d, 40px 0 #6b351d, 48px 0 #6b351d, 56px 0 #6b351d,
+        0 -8px #6b351d, 8px -8px #6b351d, 16px -8px #6b351d, 40px -8px #6b351d, 48px -8px #6b351d, 56px -8px #6b351d, 64px -8px #6b351d,
+        8px -16px #6b351d, 16px -16px #6b351d, 24px -16px #2879cf, 40px -16px #2879cf, 48px -16px #6b351d, 56px -16px #6b351d,
+        16px -24px #2879cf, 24px -24px #2879cf, 40px -24px #2879cf, 48px -24px #2879cf,
+        16px -32px #2879cf, 24px -32px #2879cf, 40px -32px #2879cf, 48px -32px #2879cf,
+        8px -40px #e52521, 16px -40px #2879cf, 24px -40px #2879cf, 32px -40px #2879cf, 40px -40px #2879cf, 48px -40px #2879cf, 56px -40px #e52521,
+        8px -48px #e52521, 16px -48px #e52521, 24px -48px #f6c744, 32px -48px #2879cf, 40px -48px #f6c744, 48px -48px #e52521, 56px -48px #e52521,
+        8px -56px #e52521, 16px -56px #e52521, 24px -56px #2879cf, 32px -56px #2879cf, 40px -56px #2879cf, 48px -56px #e52521, 56px -56px #e52521,
+        8px -64px #e52521, 16px -64px #e52521, 24px -64px #2879cf, 32px -64px #2879cf, 40px -64px #2879cf, 48px -64px #e52521, 56px -64px #e52521,
+        16px -72px #e52521, 24px -72px #e52521, 32px -72px #e52521, 40px -72px #e52521, 48px -72px #e52521,
+        8px -80px #6b351d, 16px -80px #f2b27d, 24px -80px #f2b27d, 32px -80px #f2b27d, 40px -80px #f2b27d, 48px -80px #f2b27d, 56px -80px #6b351d,
+        8px -88px #6b351d, 16px -88px #f2b27d, 24px -88px #30251f, 32px -88px #f2b27d, 40px -88px #30251f, 48px -88px #f2b27d, 56px -88px #6b351d,
+        8px -96px #6b351d, 16px -96px #f2b27d, 24px -96px #f2b27d, 32px -96px #f2b27d, 40px -96px #f2b27d, 48px -96px #f2b27d, 56px -96px #6b351d,
+        16px -104px #e52521, 24px -104px #e52521, 32px -104px #e52521, 40px -104px #e52521, 48px -104px #e52521,
+        8px -112px #e52521, 16px -112px #e52521, 24px -112px #e52521, 32px -112px #e52521, 40px -112px #e52521, 48px -112px #e52521, 56px -112px #e52521,
+        24px -120px #e52521, 32px -120px #e52521;
+}
+
+body::after {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 78px;
+    content: "";
+    border-top: 10px solid #8b4a20;
+    background:
+        linear-gradient(90deg, transparent 48%, #8b4a20 48% 52%, transparent 52%) 0 0 / 64px 32px,
+        linear-gradient(#c96a2b 0 0) 0 0 / 100% 100%,
+        #76c442;
+    box-shadow: 0 -12px 0 #76c442;
+}
+
+h1 {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 28px;
+    padding: 14px 20px;
+    color: #fff;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+    background: #e52521;
+    border: 4px solid #9d1717;
+    box-shadow: 0 7px 0 #762019, 0 11px 0 #f6c744;
+    text-shadow: 3px 3px 0 #8e1715;
+}
+
+h1::after {
+    position: absolute;
+    top: -25px;
+    right: -19px;
+    color: #f6c744;
+    font-size: 2.2rem;
+    content: "★";
+    text-shadow: 2px 2px 0 #9d6818;
+    transform: rotate(12deg);
+}
+
+label {
+    margin: 18px 0 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+input,
+button {
+    min-height: 48px;
+    padding: 10px 14px;
+    font: inherit;
+    font-size: 1rem;
+    border: 3px solid #6b3a1e;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #6b3a1e;
+}
+
+input {
+    width: min(100%, 260px);
+    color: #392315;
+    background: #fff8dc;
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 4px solid #f7c844;
+    outline-offset: 4px;
+}
+
+button {
+    margin-top: 14px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    background: #e52521;
+    border-color: #9d1717;
+    box-shadow: 0 4px 0 #761715;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+button:hover {
+    background: #c91e1a;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #761715;
+}
+
+#resultado {
+    width: min(100%, 420px);
+    margin-top: 28px;
+    padding: 0 18px;
+    background: #fff8dc;
+    border: 5px solid #8b4a20;
+    box-shadow: 0 7px 0 #5c351f, 0 11px 0 #f6c744;
+}
+
+#resultado:empty {
+    display: none;
+}
+
+#resultado h2 {
+    color: #e52521;
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 0 #f6c744;
+}
+
+#resultado p {
+    margin: 8px 0;
+    padding: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background: #ffe89b;
+    border: 2px dashed #d48722;
+}
+
+@media (max-width: 420px) {
+    body {
+        padding-top: 36px;
+    }
+
+    #resultado {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body::before {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}
